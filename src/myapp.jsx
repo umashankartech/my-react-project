@@ -62,26 +62,26 @@ function Toapp(){
     
         <div className='container'>
             <div className='content'>
-            <h1>To-Do-List</h1>
-            <div className="in">
-            <input type="text" placeholder='Enter a task...'
-             value={newTask} onChange={handlenewtask}/>
-             { isediting ? <button onClick={()=>update(currentIndex)}>UPDATE</button> : <button onClick={addtask}>ADD</button>
-             }
-            
-            </div>
-            {showError && (<p className='error'>Enter a value to add</p>)}
-            <ul>
-                {tasks.map((task,index)=>
-                <li key={index}>
-                <button className='up-btn' onClick={()=> moveup(index)}>☝️</button>
-                <button className='down-btn' onClick={()=> movedown(index)}>👇</button>
-                <span className='text'>{task} </span>
-                <button className='update-btn' onClick={()=> edit(index)}>EDIT</button>
-                <button className='delete-btn'onClick={()=>deletetask(index)}>DELETE</button>
-                </li>
-                )}
-                </ul>
+                <h1>To-Do-List</h1>
+                <div className="in">
+                <input type="text" placeholder='Enter a task...'
+                value={newTask} onChange={handlenewtask}/>
+                { isediting ? <button onClick={()=>update(currentIndex)}>UPDATE</button> 
+                : <button onClick={addtask}>ADD</button>
+                }
+                </div>
+                {showError && (<p className='error'>Enter a value to add</p>)}
+                <ul>
+                    {tasks.map((task,index)=>
+                    <li key={index}>
+                    <button className='up-btn' onClick={()=> moveup(index)}>☝️</button>
+                    <button className='down-btn' onClick={()=> movedown(index)}>👇</button>
+                    <span className='text'>{task} </span>
+                    <button className='update-btn' onClick={()=> edit(index)}>EDIT</button>
+                    <button className='delete-btn'onClick={()=>deletetask(index)}>DELETE</button>
+                    </li>
+                    )}
+                    </ul>
             </div>
            
            
